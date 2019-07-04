@@ -12,6 +12,7 @@ export class HomePage {
   isEnabled = true;
   buttonCliked = false;
   coffeeReady = false;
+  cancelCliked = false;
   selectedCoffee = "";
   constructor(private dataService: DataService) {
       this.dataService.get_data().subscribe((res)=>{
@@ -24,11 +25,14 @@ export class HomePage {
       this.coffeeReady = false;
       this.isEnabled = false;
       setTimeout(() => {
-        this.buttonCliked = false;
-        this.coffeeReady = true;
+        if (!this.cancelCliked ) {
+          this.buttonCliked = false;
+          this.coffeeReady = true;
+        }
       }, 3000);
     }
     cancelCoffee () {
+      this.cancelCliked = true;
       this.buttonCliked = false;
       this.coffeeReady = false;
       this.isEnabled = true;

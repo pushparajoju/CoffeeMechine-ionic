@@ -7,17 +7,20 @@
           WHICH COFFEE WOULD YOU LIKE?
         </h1>
       </div>
-      <div *ngIf = "responseData != undefined">
+      <div style="text-align:center">
       <img src="../../assets/images/coffemachine.gif" alt="">
       </div>
+      <div style="text-align:center">
         <ion-button color="primary" (click)="coffeeSelcted('mocha')" [disabled]="!isEnabled"> Mocha</ion-button>
         <ion-button color="primary" (click)="coffeeSelcted('cappuccino')" [disabled]="!isEnabled">Cappuccino </ion-button>
-
-      <div *ngIf="buttonCliked">
+        <ion-button color="primary" (click)="coffeeSelcted('mocha')" [disabled]="!isEnabled"> Mocha</ion-button>
+        <ion-button color="primary" (click)="coffeeSelcted('cappuccino')" [disabled]="!isEnabled">Cappuccino </ion-button>
+      </div>
+      <div *ngIf="buttonCliked" style="text-align:center">
         <p>You are ordered an awsome {{selectedCoffee}}.</p>
         <ion-button color="warning" (click)="cancelCoffee()"> Cancel</ion-button>
       </div>
-      <div *ngIf="coffeeReady">
+      <div *ngIf="coffeeReady" style="text-align:center">
         <p>Your order is ready ! </p>
         <ion-button color="success" (click)="cancelCoffee()"> Collect your order </ion-button>
       </div>
