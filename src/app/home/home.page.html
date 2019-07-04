@@ -8,7 +8,7 @@
         </h1>
       </div>
       <div *ngIf = "responseData != undefined">
-      <img src="{{responseData.avatar_url}}" alt="">
+      <img src="../../assets/images/coffemachine.gif" alt="">
       </div>
         <ion-button color="primary" (click)="coffeeSelcted('mocha')" [disabled]="!isEnabled"> Mocha</ion-button>
         <ion-button color="primary" (click)="coffeeSelcted('cappuccino')" [disabled]="!isEnabled">Cappuccino </ion-button>
