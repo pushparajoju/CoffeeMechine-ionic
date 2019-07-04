@@ -1,14 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <div style="text-align:center">
+        <h1>
+          WHICH COFFEE WOULD YOU LIKE?
+        </h1>
+      </div>
+      <div *ngIf = "responseData != undefined">
+      <img src="{{responseData.avatar_url}}" alt="">
+      </div>
+        <ion-button color="primary" (click)="coffeeSelcted('mocha')" [disabled]="!isEnabled"> Mocha</ion-button>
+        <ion-button color="primary" (click)="coffeeSelcted('cappuccino')" [disabled]="!isEnabled">Cappuccino </ion-button>
+
+      <div *ngIf="buttonCliked">
+        <p>You are ordered an awsome {{selectedCoffee}}.</p>
+        <ion-button color="warning" (click)="cancelCoffee()"> Cancel</ion-button>
+      </div>
+      <div *ngIf="coffeeReady">
+        <p>Your order is ready ! </p>
+        <ion-button color="success" (click)="cancelCoffee()"> Collect your order </ion-button>
+      </div>
 </ion-content>
